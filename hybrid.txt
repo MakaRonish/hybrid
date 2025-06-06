@@ -1,0 +1,22 @@
+String Interpolation
+ng gc compname --skips-tests
+
+import component to root app.componet.ts imports
+
+create class or an interface: 
+they are different 
+
+new ts file
+export class Student{
+    sid!:number;
+    sname!:string;
+    scampus:string | undefined;
+    slogin:string | undefined;
+}
+
+first import the class or interface in header or where we wanna use
+
+import module for upper case
+
+
+Event binding
