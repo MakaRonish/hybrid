@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Sign In</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form (ngSubmit)="signIn()">
+    <ion-item>
+      <ion-label position="floating">Your Name</ion-label>
+      <ion-input [(ngModel)]="name" name="name" type="text" required inputmode="text" clearInput="true">
+      </ion-input>
+    </ion-item>
+    <ion-button expand="block" type="submit" [disabled]="!name">Sign In</ion-button>
+  </form>
+
+  <ion-list *ngIf="members.length > 0">
+    <ion-list-header>
+      Signed In Members
+    </ion-list-header>
+    <ion-item *ngFor="let m of members">
+      <ion-label>
+        <h2>{{ m.name }}</h2>
+        <p>{{ m.time | date:'short' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

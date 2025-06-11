@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Assign Task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label>Select Member</ion-label>
+    <ion-select [(ngModel)]="selectedMember">
+      <ion-select-option *ngFor="let m of members" [value]="m.name">
+        {{ m.name }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="selectedTask">
+      <ion-list-header>
+        <ion-label>Choose a Task</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let task of taskList">
+        <ion-label>{{ task }}</ion-label>
+        <ion-radio slot="start" [value]="task"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button expand="block" (click)="assign()" [disabled]="!selectedMember || !selectedTask">
+    Assign Task
+  </ion-button>
+
+  <ion-list *ngIf="tasks.length > 0">
+    <ion-list-header>
+      Assigned Tasks
+    </ion-list-header>
+    <ion-item *ngFor="let t of tasks">
+      <ion-label>
+        <h2>{{ t.member }}</h2>
+        <p>{{ t.task }} — {{ t.time | date:'short' }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
