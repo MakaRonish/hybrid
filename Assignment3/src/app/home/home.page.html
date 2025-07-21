@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Contact Manager
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Welcome!</ion-card-title>
+      <ion-card-subtitle>Manage your contacts easily</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" [routerLink]="['/add-contact']" color="primary">
+        ➕ Add New Contact
+      </ion-button>
+
+      <ion-button expand="block" [routerLink]="['/list-contacts']" color="secondary">
+        📋 View Contact List
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title size="small" class="ion-text-center">
+      © 2025 by Ronish Makaju. All rights reserved.
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
